@@ -21,7 +21,9 @@ const handler = NextAuth({
         async signIn({profile}) {
             try {
                 // Serverless -> lambda func -> dynamicdb
+                // => Open up only when it gets called 
                 // Make Connection to db as needed
+                // => we dont have to keep our server running constanly 
                 await connectToDB();
                 //  2 Check
                 // check if a user already exists
